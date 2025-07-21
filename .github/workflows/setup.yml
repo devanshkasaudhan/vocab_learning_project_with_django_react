@@ -1,0 +1,19 @@
+name: Setup Repository
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Enable GitHub Pages
+      run: |
+        echo "🚀 To complete the setup:"
+        echo "1. Go to your repository Settings"
+        echo "2. Navigate to Pages section"
+        echo "3. Set Source to 'GitHub Actions'"
+        echo "4. Push your code to trigger the first deployment"
+        echo ""
+        echo "Your app will be available at:"
+        echo "https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME"
