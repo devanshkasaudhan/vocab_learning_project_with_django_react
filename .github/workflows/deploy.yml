@@ -130,12 +130,16 @@ jobs:
         npm run build
       env:
         CI: false
-        PUBLIC_URL: /vocab
+        PUBLIC_URL: /vocab_learning_project_with_django_react
     
     - name: Create deployment directory
       run: |
         mkdir -p deployment
         cp -r vocab_frontend/build/* deployment/
+        
+        # Ensure manifest.json and other static files are in the correct location
+        mkdir -p deployment/vocab_learning_project_with_django_react
+        cp -r vocab_frontend/build/* deployment/vocab_learning_project_with_django_react/
         
         # Create a simple API mock for GitHub Pages (since we can't run Django on GitHub Pages)
         mkdir -p deployment/api
